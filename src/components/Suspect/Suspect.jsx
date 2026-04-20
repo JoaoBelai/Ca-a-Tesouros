@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import './Suspects.css'
+import './Suspect.css'
 
-function Suspects({img, name, alibi, desc, profession}){
+export default function Suspect({img, name, alibi, desc, profession}){
     const [risk, setRisk] = useState(false);
 
     const handleRisk = () => {
@@ -9,7 +9,7 @@ function Suspects({img, name, alibi, desc, profession}){
     };
 
     return(
-        <article className='suspectsContainer'>
+        <article className='suspectContainer'>
             <figure className='suspectImage'>
                 <img src={img} alt="Foto do suspeito" />
             </figure>
@@ -27,11 +27,9 @@ function Suspects({img, name, alibi, desc, profession}){
 
                 <p className='suspectDesc'>{desc}</p>
 
-                <p className='suspectAlibi'><span className='alibiBold'>Alibi:</span>{alibi}</p>
+                <p className='suspectAlibi'><span className='alibiBold'>Alibi: </span>{alibi}</p>
             </div>
 
         </article>
     );
 }
-
-export default Suspects;

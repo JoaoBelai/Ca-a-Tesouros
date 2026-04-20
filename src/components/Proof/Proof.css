@@ -1,0 +1,130 @@
+.proofContainer{
+    display: flex;
+    width: 100%;
+    max-width: 37rem;
+    padding: 0.5rem;
+    flex-direction: row;
+    align-items: stretch;
+    background-color: rgba(68, 68, 68, 0.6);
+    border: 1px solid rgba(76, 76, 76, 0.92);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(11.9px);
+    -webkit-backdrop-filter: blur(11.9px);
+    gap: 1rem;
+}
+
+.proofImage{
+    flex: 0 0 clamp(5rem, 25%, 9rem);
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.proofImage img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.proofInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #EAEAEA;
+    padding: 0.2rem;
+    width: 100%;
+    text-align: left;
+    gap: 1rem;
+    min-width: 0;
+}
+
+.proofInfoHeader{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.proofName{
+    font-size: 1.30rem;
+    font-weight: 700;
+    font-family: 'Montserrat';
+    white-space: nowrap;
+}
+
+.tagBase{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.15rem 0.65rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    font-size: 0.55rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.tag-arma{
+    border: 1px solid #CE0000;
+    color: #FA0000;
+    background-color: #1D0707;
+}
+
+.tag-audio{
+    border: 1px solid #00DD00;
+    color: #00DD00;
+    background-color: #0C1D07;
+}
+
+.tag-doc\.{
+    border: 1px solid #D2A100;
+    color: #D2A100;
+    background-color: #1D1807;
+}
+
+.tag-objeto{
+    border: 1px solid #006FFF;
+    color: #006FFF;
+    background-color: #030812;
+}
+
+.tag-default{
+    border: 1px solid #AAAAAA;
+    color: #AAAAAA;
+    background-color: #161515;
+}
+
+
+.proofDesc{
+    width: 100%;
+    font-size: 0.625rem;
+    font-weight: 300;
+    font-family: 'Montserrat';
+    text-align: left;
+    line-height: 1.6;
+    letter-spacing: 0.01rem;
+}
+
+
+@media screen and (min-width:520px) {
+    .proofName{
+        font-size: 1.55rem;
+    }
+
+    .tagBase{
+        padding: 0.25rem 0.9rem;
+        border-radius: 4px;
+        font-size: 0.7rem;
+    }
+
+    .proofDesc{
+        font-size: 0.8rem;
+        letter-spacing: 0.02rem;
+    }
+}

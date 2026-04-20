@@ -1,0 +1,46 @@
+.mainMap{
+    min-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1.875rem;
+    background: #1D1D1D;
+    background: linear-gradient(180deg,rgba(29, 29, 29, 1) 17%, rgba(18, 18, 18, 1) 88%);
+    background-image: url('../../assets/mapa.png'); 
+    background-repeat: no-repeat; 
+    background-position: top right;
+}
+
+.mapTitle{
+    align-self: flex-start;
+    text-align: left;
+    color: #EAEAEA;
+    font-family: 'Saira Stencil One';
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 0.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.mapImage{
+    flex: 0 0 clamp(37.5rem, 41rem, 43.75rem);
+    border-radius: 15px;
+    overflow: hidden;   
+}
+
+.mapImage img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+@media screen and (min-width:520px) {
+    .mapTitle{
+        align-self: center;
+    }
+}
+

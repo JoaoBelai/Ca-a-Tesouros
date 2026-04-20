@@ -1,0 +1,48 @@
+.mainSuspects{
+    min-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1.875rem;
+    background: #1D1D1D;
+    background: linear-gradient(180deg,rgba(29, 29, 29, 1) 17%, rgba(18, 18, 18, 1) 88%);
+    background-image: url('../../assets/suspeito.png'); 
+    background-repeat: no-repeat; 
+    background-position: top right;
+}
+
+.suspectsTitle{
+    align-self: flex-start;
+    text-align: left;
+    color: #EAEAEA;
+    font-family: 'Saira Stencil One';
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 0.3rem;
+    margin-bottom: 1.3rem;
+}
+
+.suspectsContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1.7rem;
+}
+
+@media screen and (min-width:540px) {
+    .suspectsTitle{
+        align-self: center;
+        font-size: 2.6rem;
+    }
+
+    .suspectsContainer{
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+    }
+}

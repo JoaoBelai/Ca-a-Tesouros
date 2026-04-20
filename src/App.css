@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contentArea {
+    width: 100%;
+    min-height: 100vh;
+    padding-bottom: 4.9rem;
+    background: #1D1D1D;
+    background: linear-gradient(180deg,rgba(29, 29, 29, 1) 17%, rgba(18, 18, 18, 1) 88%);
+}
