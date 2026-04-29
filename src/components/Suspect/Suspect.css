@@ -75,13 +75,13 @@
     transition: 300ms ease-in-out;
 }
 
-.highRisk{
+.lowRisk{
     border: 1px solid #AAAAAA;
     color: #AAAAAA;
     background-color: #161515;
 }
 
-.lowRisk{
+.highRisk{
     border: 1px solid #CE0000;
     color: #FA0000;
     background-color: #1D0707;
