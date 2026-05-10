@@ -10,7 +10,7 @@ export default function Dialog({data, onWin, onClose}){
     const showingQuestion = step >= totalDialogs;
 
     const nextDialog = () => setStep(prev => prev + 1);
-    const backDialog = () => setStep(prev => prev - 1);
+    const backDialog = () => setStep(prev => (prev > 0 ? prev - 1 : 0));
 
     const validate = () =>{
         if (!selectedOption){
@@ -26,41 +26,59 @@ export default function Dialog({data, onWin, onClose}){
     }
     
     return(
-        <div className="modal-overlay">
-        <div className="modal-content">
-            <button onClick={onClose} className="btn-fechar">X</button>
+        <div className="modalOverlay">
+            <article className="modalContent">
+                <button onClick={onClose} className="closeBtn">X</button>
 
-            {!mostrandoPergunta ? (
-            <div className="conversa">
-                <p className="texto-dialogo">{dados.dialogos[passo]}</p>
-                <button className="btn-acao" onClick={avancarDialogo}>Próximo</button>
-            </div>
-            ) : (
-            <div className="pergunta">
-                <h3>{dados.pergunta}</h3>
-                
-                <div className="grid-opcoes">
-                {dados.opcoes.map((opcao, index) => (
-                    <button
-                    key={index}
-                    className={`btn-opcao ${opcaoSelecionada === opcao ? "selecionada" : ""}`}
-                    onClick={() => {
-                        setOpcaoSelecionada(opcao);
-                        setErro("");
-                    }}
-                    >
-                    {opcao}
-                    </button>
-                ))}
-                </div>
-                
-                {erro && <p className="msg-erro">{erro}</p>}
-                {dados.dica && <p className="dica">Dica: {dados.dica}</p>}
-                
-                <button className="btn-acao confirmar" onClick={validar}>Confirmar</button>
-            </div>
-            )}
-        </div>
+                {!showingQuestion ? ( 
+                    <div className="dialog">
+
+                        {data.imagem && (
+                            <img src={data.imagem} alt={data.pessoa} className="personImage" />
+                        )}
+
+                        <div className="dialogContentArea">
+                            <h2 className="announcer">{data.pessoa}</h2>
+                            <p className="dialogText">{data.dialogos[step]}</p>
+
+                            <div className="passButtons">
+                                <button 
+                                    className="actionButton" 
+                                    onClick={backDialog}
+                                    disabled={step === 0}
+                                    style={step === 0 ? { opacity: 0.5, cursor: 'not-allowed' } : {}}
+                                >
+                                    Anterior
+                                </button>
+                                <button className="actionButton" onClick={nextDialog}>Próximo</button>
+                            </div>
+                        </div>
+                    </div>
+                ) : (
+                    <div className="question">
+                        <h2 className="statement">{data.pergunta}</h2>
+    
+                        <div className="options">
+                            {data.opcoes.map((option, index) => (
+                                <button
+                                    key={index}
+                                    className={`optionBtn ${selectedOption === option ? "selected" : ""}`}
+                                    onClick={() => {
+                                        setSelectedOption(option);
+                                        setError("");
+                                    }}
+                                >
+                                    {option}
+                                </button>
+                            ))}
+                        </div>
+                        
+                        {error && <p className="errorMessage">{error}</p>}
+                        
+                        <button className="confirmButton" onClick={validate}>Confirmar</button>
+                    </div>
+                )}
+            </article>
         </div>
     );
 }

@@ -26,16 +26,55 @@
 }
 
 .mapImage{
+    margin: 0;
+    padding: 0;
     flex: 0 0 clamp(37.5rem, 41rem, 43.75rem);
     border-radius: 15px;
+    display: block;
     overflow: hidden;   
 }
 
 .mapImage img{
     width: 100%;
     height: 100%;
+    display: block;
     object-fit: cover;
     border-radius: 15px;
+}
+
+.mapContainer {
+    position: relative; 
+    width: 100%;
+    max-width: 800px;
+}
+
+.pin {
+    position: absolute;
+    transform: translate(-50%, -100%); 
+    background: transparent; 
+    border: none; 
+    padding: 0;
+    font-size: 2.7rem; 
+    transition: transform 0.2s ease, filter 0.2s ease;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resolved {
+    color: #00DD00; 
+    cursor: pointer;
+}
+
+.available { 
+    color: #CE0000; 
+    cursor: pointer;
+}
+
+.blocked {
+    color: #979797; 
+    cursor: not-allowed;
 }
 
 @media screen and (min-width:520px) {
