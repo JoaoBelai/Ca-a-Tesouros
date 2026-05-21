@@ -1,7 +1,7 @@
 import './Map.css'
 import { useEffect, useState } from 'react';
 import Dialog from '../../components/Dialog/Dialog';
-import { QUESTOES } from '../../data/data';
+import { QUESTIONS } from '../../data/data';
 import Mapa from '../../assets/mapImage.png'
 import { IoIosPin } from "react-icons/io";
 
@@ -33,7 +33,7 @@ export default function Map(){
                     <img src={Mapa} alt="Imagem do mapa da cidade" />
                 </figure>
 
-                {QUESTOES.map((question, index) => {
+                {QUESTIONS.map((question, index) => {
                     const resolved = index < currentPhase;
                     const available = index === currentPhase;
                     const blocked = index > currentPhase;

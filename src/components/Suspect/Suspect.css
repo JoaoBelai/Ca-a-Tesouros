@@ -119,6 +119,14 @@
     font-family: 'Montserrat';
 }
 
+@media screen and (max-width:450px) {
+    .suspectInfoHeader{
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 5px;
+    }
+}
+
 @media screen and (min-width:520px) {
 
     .suspectInfo{

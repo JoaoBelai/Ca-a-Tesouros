@@ -13,6 +13,82 @@
     background-position: top right;
 }
 
+.killerSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: transparent;
+    border: 3px dashed gray;
+    padding: 15px;
+    min-height: 160px;
+    height: auto;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    gap: 15px;
+}
+
+
+.killerSection.isOver {
+    background-color: rgba(255, 0, 0, 0.09);
+    border: 3px dashed #CC031E;
+}
+
+.killerSection.isCorrect {
+    background-color: rgba(0, 255, 0, 0.1);
+    border: 3px solid rgb(0, 255, 0); 
+}
+
+.killerSection.isWrong {
+    background-color: rgba(255, 0, 0, 0.09);
+    border: 3px solid #CC031E;
+}
+
+.killerSectionTitle{
+    color: #CC031E;
+    font-family: 'Saira Stencil One';
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+
+.killerSectionBottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.accuseBtn{
+    background-color: #CC031E;
+    color: #FFF;
+    border: 1px solid #62020F;
+    padding: 0.3rem 1.15rem;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.successText{
+    color: rgb(0, 255, 0);
+    font-family: 'Saira Stencil One';
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.errorText{
+    color: rgba(204, 3 ,30, 1);
+    font-family: 'Saira Stencil One';
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+}
+
 .suspectsTitle{
     align-self: flex-start;
     text-align: left;
