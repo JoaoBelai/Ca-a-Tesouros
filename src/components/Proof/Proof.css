@@ -41,23 +41,15 @@
     min-width: 0;
 }
 
-.proofInfoHeader{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-}
-
 .proofName{
-    font-size: 1.30rem;
+    font-size: 1.1rem;
     font-weight: 700;
     font-family: 'Montserrat';
     white-space: nowrap;
 }
 
 .tagBase{
+    align-self: flex-end;
     display: flex;
     align-items: center;
     justify-content: center;

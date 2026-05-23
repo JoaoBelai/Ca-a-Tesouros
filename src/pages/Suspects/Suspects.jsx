@@ -1,5 +1,5 @@
 import './Suspects.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { DndContext, useDroppable } from '@dnd-kit/core';
 import { SUSPECTS } from '../../data/data';
 import Suspect from '../../components/Suspect/Suspect'
@@ -28,6 +28,14 @@ export default function Suspects(){
     const [accusedId, setAccusedId] = useState(null);
     const [feedbackMessage, setFeedbackMessage] = useState("");
     const [accusationStatus, setAccusationStatus] = useState(null);
+    const [progress, setProgress] = useState(0);
+
+    useEffect(() => {
+        const saved = localStorage.getItem("progress");
+        if (saved) {
+            setProgress(parseInt(saved, 10));
+        }
+    }, []);
 
     const handleDragEnd = (event) => {
         const { active, over } = event;
@@ -53,8 +61,11 @@ export default function Suspects(){
         }
     };
 
-    const accusedSuspectInfo = SUSPECTS.find(s => s.id === accusedId);
-    const remainingSuspects = SUSPECTS.filter(s => s.id !== accusedId);
+    const unlockedSuspects = SUSPECTS.filter(suspect => suspect.id <= progress);
+
+    const accusedSuspectInfo = unlockedSuspects.find(s => s.id === accusedId);
+    
+    const remainingSuspects = unlockedSuspects.filter(s => s.id !== accusedId);
 
     return(
         <main className='mainSuspects'>
@@ -88,17 +99,21 @@ export default function Suspects(){
                 </DropZone>
 
                 <section className='suspectsContainer'>
-                    {remainingSuspects.map((suspect) => (
-                        <Suspect
-                            key={suspect.id}
-                            id={suspect.id} 
-                            img={suspect.img}
-                            name={suspect.name}
-                            alibi={suspect.alibi}
-                            desc={suspect.desc}
-                            profession={suspect.profession}
-                        />
-                    ))}
+                    {remainingSuspects.length > 0 ? (
+                        remainingSuspects.map((suspect) => (
+                            <Suspect
+                                key={suspect.id}
+                                id={suspect.id} 
+                                img={suspect.img}
+                                name={suspect.name}
+                                alibi={suspect.alibi}
+                                desc={suspect.desc}
+                                profession={suspect.profession}
+                            />
+                        ))
+                    ) : (
+                        <p className="emptyState">Nenhum suspeito identificado ainda.</p>
+                    )}
                 </section>
             </DndContext>
         </main>

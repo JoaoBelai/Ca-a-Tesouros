@@ -10,19 +10,17 @@ export default function Proof({img, name, desc, type}){
     return(
         <article className='proofContainer'>
             <figure className='proofImage'>
-                <img src={img} alt="Foto do pista" />
+                <img src={img} alt={`Foto ${name}`} />
             </figure>
 
             <div className='proofInfo'>
-                <div className='proofInfoHeader'>
-                    <h1 className='proofName'>{name}</h1>
-
-                    <span className={`tagBase tag-${tagClass}`}>
-                        {type}
-                    </span>
-                </div>
+                <h1 className='proofName'>{name}</h1>
 
                  <p className='proofDesc'>{desc}</p>
+                 
+                <span className={`tagBase tag-${tagClass}`}>
+                    {type}
+                </span>
             </div>
         </article>
     );

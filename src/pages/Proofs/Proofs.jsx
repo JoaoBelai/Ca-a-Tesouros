@@ -1,48 +1,37 @@
 import './Proofs.css'
+import { useState, useEffect } from 'react';
 import Proof from '../../components/Proof/Proof'
-import Faca from '../../assets/faca.png'
+import { PROOFS } from '../../data/data';
 
 export default function Proofs(){
+    const [progress, setProgress] = useState(0);
+
+    useEffect(() => {
+        const saved = localStorage.getItem("progress");
+        if (saved) {
+            setProgress(parseInt(saved, 10));
+        }
+    }, []);
+
+    const unlockedProofs = PROOFS.filter(proof => proof.id <= progress);
+
     return(
         <main className='mainProofs'>
             <h1 className='proofsTitle'>PROVAS</h1>
             <section className='proofsContainer'>
-                <Proof
-                    img={Faca}
-                    name="Faca de caça"
-                    desc="Faca de caça encontrada com sangue na cena do crime, provavel arma utilizada para o assasinato"
-                    type= "arma"
-                />
-                <Proof
-                    img={Faca}
-                    name="Faca de caça"
-                    desc="Faca de caça encontrada com sangue na cena do crime, provavel arma utilizada para o assasinato"
-                    type= "audio"
-                />
-                <Proof
-                    img={Faca}
-                    name="Faca de caça"
-                    desc="Faca de caça encontrada com sangue na cena do crime, provavel arma utilizada para o assasinato"
-                    type= "doc."
-                />
-                <Proof
-                    img={Faca}
-                    name="Faca de caça"
-                    desc="Faca de caça encontrada com sangue na cena do crime, provavel arma utilizada para o assasinato"
-                    type= "audio"
-                />
-                <Proof
-                    img={Faca}
-                    name="Faca de caça"
-                    desc="Faca de caça encontrada com sangue na cena do crime, provavel arma utilizada para o assasinato"
-                    type= "objeto"
-                />
-                <Proof
-                    img={Faca}
-                    name="Faca de caça"
-                    desc="Faca de caça encontrada com sangue na cena do crime, provavel arma utilizada para o assasinato"
-                    type= "doc."
-                />
+                {unlockedProofs.length > 0 ? (
+                    unlockedProofs.map((proof) => (
+                        <Proof
+                            key={proof.id}
+                            img={proof.img} 
+                            name={proof.name}
+                            desc={proof.desc}
+                            type={proof.type}
+                        />
+                    ))
+                ) : (
+                    <p className="emptyState">Nenhuma prova desbloqueada ainda. Resolva os diálogos no mapa.</p>
+                )}
             </section>
         </main>
     );
