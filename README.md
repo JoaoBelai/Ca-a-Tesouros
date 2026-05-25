@@ -1,16 +1,54 @@
-# React + Vite
+# Detetive
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Plataforma web desenvolvida como projeto acadêmico para o Senai Roberto Mange, um jogo de detetive feito com React responsivo para Celulares e Tablets.
+Permite o usuário investigar, responder perguntas baseados em depoimentos de suspeitos, cruzar pistas e acusar o verdadeiro assasino.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Funcionalidades Principais
 
-## React Compiler
+### 🔎 Navegação e Jogatina
+* Navegação entre telas
+* Responsividade para Celulares e Tablets
+* Quiz com base em depoimentos de suspeitos
+* Drag and Drop de suspeitos para acusar o culpado
+* Progressão salva em local storage
+* Suspeitos e provas disponíveis de acordo com progresso
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologias Utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Front-End
+* React + Vite
+* JavaScript
+
+---
+
+## ⚙️ Como Rodar o Projeto
+
+1.  **Acesse o diretório** do front-end em seu terminal:
+    ```bash
+    cd ca-a-tesouros
+    ```
+
+2.  **Instale as dependências** do Node.js:
+    ```bash
+    npm install
+    ```
+
+3.  **Inicie o servidor** de desenvolvimento (Vite):
+    ```bash
+    npm run dev
+    ```
+
+4.  **Acesse a aplicação** no seu navegador:
+    * [http://localhost:5173/](http://localhost:5173/)
+
+---
+
+## 🎨 Design & Prototipação
+
+O protótipo de média fidelidade do projeto foi desenvolvido no Figma e pode ser acessado no link abaixo:
+
+[**Acessar o protótipo no Figma**](https://www.figma.com/design/eLq8hXcorGWPsN5myy6p5J/Untitled?node-id=0-1&t=mGTFkyk1MD5q2yqi-1)
