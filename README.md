@@ -9,7 +9,7 @@ Permite o usuário investigar, responder perguntas baseados em depoimentos de su
 
 ### 🔎 Navegação e Jogatina
 * Navegação entre telas
-* Responsividade para Celulares e Tablets
+* Responsividade para Celulares e Tablets (de 400px até 800px de width)
 * Quiz com base em depoimentos de suspeitos
 * Drag and Drop de suspeitos para acusar o culpado
 * Progressão salva em local storage
