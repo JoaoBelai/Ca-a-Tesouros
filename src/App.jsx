@@ -5,10 +5,13 @@ import Map from './pages/Map/Map';
 import Home from './pages/Home/Home';
 import Suspects from './pages/Suspects/Suspects';
 import Proofs from './pages/Proofs/Proofs';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <>
+      <ToastContainer position="top-right" autoClose={3000} />
       <BrowserRouter>
         <main className="contentArea">
           <Routes>

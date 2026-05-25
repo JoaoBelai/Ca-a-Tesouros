@@ -1,5 +1,6 @@
 import './Map.css'
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import Dialog from '../../components/Dialog/Dialog';
 import { QUESTIONS } from '../../data/data';
 import Mapa from '../../assets/mapImage.png'
@@ -22,6 +23,8 @@ export default function Map(){
             setCurrentPhase(prev => prev + 1);
         }
         setActiveQuestion(null);
+
+        toast.success("Parabéns, você acertou! Nova prova e suspeito desbloqueado.");
     }
 
     return(

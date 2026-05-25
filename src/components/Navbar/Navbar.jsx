@@ -9,16 +9,16 @@ export default function Navbar(){
             <ul className="navList">
 
                 <li>
-                    <NavLink to="/map" className={navClass}>
-                        <Map className="navIcon" />
-                        <p className="navLabel">MAPA</p>
-                    </NavLink>
-                </li>
-
-                <li>
                     <NavLink to="/" className={navClass}>
                         <House className="navIcon" />
                         <p className="navLabel">HOME</p>
+                    </NavLink>
+                </li>
+                
+                <li>
+                    <NavLink to="/map" className={navClass}>
+                        <Map className="navIcon" />
+                        <p className="navLabel">MAPA</p>
                     </NavLink>
                 </li>
                 

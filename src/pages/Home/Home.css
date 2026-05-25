@@ -1,3 +1,29 @@
+.bannerHome{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+    background-image: url('../../assets/homeBanner.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 1rem;
+}
+
+.homeTitle{
+    width: 70%;
+    align-self: flex-start;
+    text-align: left;
+    color: #D7011D;
+    font-family: 'Saira Stencil One';
+    text-transform: uppercase;
+    font-size: 3.1rem;
+    font-weight: 500;
+    letter-spacing: 0.3rem;
+    margin-bottom: 1.3rem;
+}
+
 .mainHome{
     min-width: 100%;
     min-height: 100vh;
@@ -5,19 +31,108 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 1.875rem;
+    padding: 1.9rem;
     background: #1D1D1D;
     background: linear-gradient(180deg,rgba(29, 29, 29, 1) 17%, rgba(18, 18, 18, 1) 88%);
+    gap: 1.2rem;
 }
 
-.homeTitle{
-    align-self: flex-start;
-    text-align: left;
-    color: #EAEAEA;
+.caseTitle{
+    width: 100%;
+    text-align: center;
+    color: #eaeaea;
     font-family: 'Saira Stencil One';
-    text-transform: uppercase;
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: 500;
-    letter-spacing: 0.3rem;
-    margin-bottom: 1.3rem;
+    letter-spacing: 0.2rem;
+}
+
+.caseInfo{
+    width: 100%;
+    text-align: center;
+    color: #eaeaea;
+    font-family: 'Montserrat';
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.homeImage{
+    width: 90%;
+    height: auto;
+    border-radius: 20px;
+    display: block;
+    overflow: hidden;
+}
+
+.homeImage img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.resetGameBtn{
+    margin-top: 0.8rem;
+    background-color: #CC031E;
+    color: #FFF;
+    border: 1px solid #62020F;
+    padding: 0.4rem 1.3rem;
+    border-radius: 6px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.resetGameBtn:hover{
+    transition: 250ms ease-in-out;
+    transform: scale(1.07);
+}
+
+@media screen and (min-width:520px) {
+    .bannerHome{
+        height: 15rem;
+        padding: 2.2rem;
+    }
+
+    .homeImage{
+        width: 80%;
+    }
+
+    .caseTitle{
+        font-size: 2.3rem;
+    }
+}
+
+@media screen and (min-width:600px) {
+    .bannerHome{
+        height: 17.5rem;
+        padding: 2.4rem;
+    }
+
+    .homeTitle{
+        width: 50%;
+        font-size: 3.8rem;
+    }
+
+    .homeImage{
+        width: 75%;
+    }
+
+}
+
+@media screen and (min-width:700px) {
+    .bannerHome{
+        height: 19rem;
+        padding: 2.8rem;
+    }
+
+    .homeTitle{
+        width: 50%;
+        font-size: 4.2rem;
+    }
+
+    .homeImage{
+        width: 70%;
+    }
 }
