@@ -2,22 +2,29 @@ import { useState } from "react";
 import "./Dialog.css";
 
 export default function Dialog({data, onWin, onClose}){
+    // estados do componente
     const [step, setStep] = useState(0);
     const [selectedOption, setSelectedOption] = useState(null);
     const [error, setError] = useState("");
 
     const totalDialogs = data.dialogos.length;
+    
+    // Define a transição de tela: se o passo atual atingir ou ultrapassar o total de diálogos, muda para a interface de pergunta.
     const showingQuestion = step >= totalDialogs;
 
+    // Controlam a navegação no array de diálogos. O backDialog possui uma trava para impedir índices negativos.
     const nextDialog = () => setStep(prev => prev + 1);
     const backDialog = () => setStep(prev => (prev > 0 ? prev - 1 : 0));
 
+    // Concentra a regra de negócio da validação da resposta do usuário.
     const validate = () =>{
+        // Trava a execução se o usuário tentar confirmar sem escolher uma alternativa.
         if (!selectedOption){
             setError("Selecione uma opção antes de confirmar");
             return;
         }
 
+        // Compara a escolha com o gabarito. Dispara a prop onWin no acerto ou exibe erro no erro.
         if(selectedOption === data.respostaCorreta){
             onWin();
         } else {
@@ -30,6 +37,7 @@ export default function Dialog({data, onWin, onClose}){
             <article className="modalContent">
                 <button onClick={onClose} className="closeBtn">X</button>
 
+                {/* Renderização condicional principal: alterna entre exibir a leitura do diálogo ou o formulário da pergunta com base no estado showingQuestion */}
                 {!showingQuestion ? ( 
                     <div className="dialog">
 
@@ -64,6 +72,7 @@ export default function Dialog({data, onWin, onClose}){
                                     key={index}
                                     className={`optionBtn ${selectedOption === option ? "selected" : ""}`}
                                     onClick={() => {
+                                        // Registra a alternativa escolhida e limpa qualquer mensagem de erro de tentativas anteriores.
                                         setSelectedOption(option);
                                         setError("");
                                     }}

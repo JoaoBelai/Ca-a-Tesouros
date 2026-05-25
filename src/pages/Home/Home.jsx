@@ -1,9 +1,13 @@
 import './Home.css'
 import CrimeScene from '../../assets/crimeScene.png'
+import { toast } from 'react-toastify';
+
 
 export default function Home(){
+    /*Função para limpar o local storage e resetar o jogo */
     const handleReset = () => {
         localStorage.clear();
+        toast.info("Jogo reiniciado");
     }
 
     return(
